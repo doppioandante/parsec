@@ -23,6 +23,8 @@ module Text.Parsec.Language
     , GenLanguageDef
     ) where
 
+import Data.Char (isSpace)
+
 import Text.Parsec
 import Text.Parsec.Token
 
@@ -88,6 +90,7 @@ emptyDef    = LanguageDef
                , reservedOpNames= []
                , reservedNames  = []
                , caseSensitive  = True
+               , spaceFunc      = isSpace
                }
 
 

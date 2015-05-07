@@ -687,7 +687,7 @@ makeTokenParser languageDef
 
 
     simpleSpace =
-        skipMany1 (satisfy isSpace)
+        skipMany1 (satisfy $ spaceFunc languageDef)
 
     oneLineComment =
         do{ try (string (commentLine languageDef))
